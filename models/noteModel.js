@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const { encrypt } = require('n-krypta');
 const notesSchema = new mongoose.Schema(
   {
     userid: {
