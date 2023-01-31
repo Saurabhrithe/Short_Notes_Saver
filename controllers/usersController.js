@@ -1,15 +1,12 @@
 const userModel = require('../models/userModel')
-const delay = ms => new Promise(res => setTimeout(res, ms));
+//const delay = ms => new Promise(res => setTimeout(res, ms));
 const bcrypt = require('bcrypt')
 
 //login callback
 const loginController = async (req, res) => {
-    
-   
     try {
         const {email, password} = req.body 
-        console.log(email)
-        const user = await userModel.findOne({email}).then(function (user) {
+        await userModel.findOne({email}).then(function (user) {
             //console.log(user)
             if(!user){
                 return res.status(404).send({user})
@@ -22,27 +19,8 @@ const loginController = async (req, res) => {
                         });
                     }
                 })
-                /*bcrypt.compare(password, user.password, function(result){
-                    if (result){
-                        res.status(200).json({
-                            success: true,
-                            user,
-                        });
-                    }
-                })*/
-
             }
         })
-        
-        /*if(!user){
-            console.log("HI")
-            return res.status(404).send({user})
-        }
-        res.status(200).json({
-            success: true,
-            user,
-        });*/
-    
     } catch (error) {
         return res.status(400).json({success:false,error})
     }
@@ -52,7 +30,6 @@ const loginController = async (req, res) => {
 //regsiter callback
 const registerController = async (req, res) => {
     try {
-        console.log(req.body)
         const newUser = new userModel(req.body);
         
         await newUser.save();
@@ -61,17 +38,11 @@ const registerController = async (req, res) => {
             newUser,
         });
     } catch (error) {
-        //const y = userModel.findOne(email)
-        ///res.json({y})
-        return res.status(400).json({success:false,  error})
+        return res.status(404).json({success:false,  error})
     }
 };
 
-
-
 const deleteUserController = async (req, res) => {
-    
-   
     try {
         const {email, password} = req.body 
         //const user = await userModel.findOne({email, password})
@@ -83,35 +54,13 @@ const deleteUserController = async (req, res) => {
                         res.status(200).send({
                             success: true
                         })
-                        
-                        
                     }
                     else{
-                        console.log("inside compare")
+                        //console.log("inside compare")
                         return res.status(404).send(err+":")
                     }
-                    
                 })
-                /*bcrypt.compare(password, user.password, async function(result){
-                    if (result){
-                        console.log("inside delete control")
-                        return res.status(404).send("not exists")
-                    }
-                })*/
-
-        
         })
-        
-        
-        /*if(!user){
-            console.log("inside delete control")
-            return res.status(404).send("not exists")
-        }*/
-        /*await userModel.findOneAndDelete({_id:req.body.userId})
-        res.status(200).send({
-            success: true
-        })*/
-    
     } catch (error) {
         return res.status(400).json({success:false,error})
     }
