@@ -26,7 +26,7 @@ app.use(cors())
    //res.send('<h1>Hello from server</h1>')
 })*/
 
-app.use('/api/v1/users', require('./routes/usersRoute'));
+app.use('/api/v1/users', require('./routes/userRoute'));
 //notes routes
 app.use('/api/v1/notes', require('./routes/notesRoute'))
 
