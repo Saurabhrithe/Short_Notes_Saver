@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+
 const notesSchema = new mongoose.Schema(
   {
     userid: {
@@ -21,8 +22,6 @@ const notesSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
-
-
 
 const noteModel = mongoose.model("notes", notesSchema);
 

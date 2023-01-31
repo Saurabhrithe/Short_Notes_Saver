@@ -7,16 +7,16 @@ const {addNotes, getAllNotes, editNotes, deleteNotes}
 const router = express.Router();
 
 //routes
-//add expenses POST method
+//add Notes POST method
 router.post('/addNotes', addNotes)
 
-//edit expense
+//edit Note
 router.post('/editNotes', editNotes)
 
-//delete expense
+//delete Note
 router.post('/deleteNotes', deleteNotes)
 
-//got expenses
+//got Notes
 router.post('/getNotes', getAllNotes)
 
 module.exports = router;
