@@ -1,0 +1,33 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.wrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header,
+.footer {
+  background-color: antiquewhite;
+}
+
+.main {
+  background-color: #d7dae2;
+  flex: 1;
+}
+
+.btn1 {
+  width: 140px;
+  color: white;
+  background-color: rgb(229, 67, 67);
+  border-radius: 10px;
+}

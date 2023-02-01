@@ -1,0 +1,70 @@
+.filters {
+    display: flex;
+    padding: 15px;
+}
+
+.default-content {
+    text-align: center;
+    margin-top: 50%;
+}
+
+.content {
+    padding: 10px;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(auto, 400px));
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.cards {
+    height: 300px;
+    box-shadow: 0 2px 5px 5px;
+    border-radius: 25px;
+    box-shadow: 0 0 25px;
+    overflow: hidden;
+    background-color: #f3dcc1;
+}
+
+.head,
+.actions {
+    color: black;
+    font-weight: 500;
+    background-color: #b8f5c0;
+}
+
+.head,
+.description {
+    padding: 10px;
+}
+
+.title,
+.description {
+    text-align: justify;
+    text-justify: inter-word;
+    padding-top: 5px;
+}
+
+.actions {
+    display: flex;
+    gap: 20px;
+    justify-content: end;
+}
+
+#link-edit,
+#link-delete {
+    display: block;
+    text-decoration: none;
+    font-family: cursive;
+    font-weight: bold;
+    width: 70px;
+    border: 2px solid blue;
+    color: black;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+}
